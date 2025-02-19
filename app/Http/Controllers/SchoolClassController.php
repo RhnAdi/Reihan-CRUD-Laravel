@@ -32,9 +32,13 @@ class SchoolClassController extends Controller
         return redirect()->route('classes.index')->with('success', 'Class added successfully');
     }
 
-    public function show(SchoolClass $schoolClass)
+    public function show(Request $request, SchoolClass $schoolClass)
     {
-        return view('classes.show', compact('schoolClass'));
+        $schoolClass = SchoolClass::find($request->route('class'));
+        $students = $schoolClass->students ?? collect(); 
+        $teachers = $schoolClass->teachers ?? collect(); 
+
+        return view('classes.show', compact('schoolClass', 'students', 'teachers'));
     }
 
     public function edit(Request $request)

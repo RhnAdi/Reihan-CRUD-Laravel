@@ -98,5 +98,19 @@
         <script src="/assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="/js/datatables-simple-demo.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let teachersTable = document.getElementById('teachersTable');
+                let studentsTable = document.getElementById('studentsTable');
+        
+                if (teachersTable) {
+                    new DataTable('#teachersTable');
+                }
+                if (studentsTable) {
+                    new DataTable('#studentsTable');
+                }
+            });
+        </script>
     </body>
 </html>

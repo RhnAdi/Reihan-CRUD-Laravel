@@ -37,6 +37,7 @@
                         <td>{{ $class->name }}</td>
                         <td>{{ $class->grade }}</td>
                         <td>
+                            <a href="{{ route('classes.show', $class) }}" class=" btn btn-sm btn-secondary">Show</a>
                             <a href="{{ route('classes.edit', $class) }}" class=" btn btn-sm btn-warning">Edit</a>
                             <form action="{{ route('classes.destroy', $class) }}" method="POST" style="display:inline;">
                                 @csrf
